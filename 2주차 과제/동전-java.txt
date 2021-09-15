@@ -1,0 +1,36 @@
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        Integer[] aArr = new Integer[n];
+        for(int i = 0; i < aArr.length; i++){
+            aArr[i] = sc.nextInt();
+        }
+
+        //내림차순정렬 - k보다 크면 continue 하기 위함
+        Arrays.sort(aArr, Collections.reverseOrder());
+
+        int cnt = 0;
+        int coin = 0;
+        int a = 0;
+        for(int i = 0; i < n; i ++) {
+            coin = aArr[i];
+            if(coin > k) {
+                continue;   //k보다 크면 continue;
+            }
+            a = k / coin;
+            cnt += a;
+            k = k - (coin * a);
+            if (k == 0) {
+                break;
+            }
+        }
+        System.out.println(cnt);
+    }
+}
