@@ -1,0 +1,11 @@
+n = int(input())
+p = list(map(int,input().split()))
+p.sort()
+
+time = 0
+a = 0
+for i in range(n):
+	a += p[i]
+	time+=a
+
+print(time)
