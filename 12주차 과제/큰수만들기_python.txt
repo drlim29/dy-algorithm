@@ -1,0 +1,10 @@
+def makeLargeNum(lists):
+    list = [str(x) for x in lists]
+
+    res = ''.join(sorted(list , reverse=True))
+
+    return res;
+
+
+numbers = [95, 4, 82, 20, 58, 12, 53]
+makeLargeNum(number)
